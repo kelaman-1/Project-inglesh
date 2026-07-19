@@ -1,0 +1,161 @@
+/* ===== main.css — Global config, variables, backgrounds ===== */
+:root {
+  --bg: #0b0b0c;
+  --bg-soft: #121214;
+  --bg-card: #151518;
+  --text: #f2f2f7;
+  --text-dim: #b9b9c4;
+  --neon: #bc13fe;
+  --neon-soft: rgba(188, 19, 254, 0.25);
+  --neon-glow: rgba(188, 19, 254, 0.55);
+  --neon-line: rgba(188, 19, 254, 0.6);
+  --white: #ffffff;
+  --radius: 14px;
+  --font-display: "Orbitron", sans-serif;
+  --font-body: "Rajdhani", sans-serif;
+  --transition: 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Theme: Cyan Neon */
+body.theme-cyan {
+  --neon: #00f3ff;
+  --neon-soft: rgba(0, 243, 255, 0.25);
+  --neon-glow: rgba(0, 243, 255, 0.55);
+  --neon-line: rgba(0, 243, 255, 0.6);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  font-weight: 400;
+  line-height: 1.6;
+  min-height: 100vh;
+  overflow-x: hidden;
+  position: relative;
+  transition: color var(--transition);
+}
+
+/* Decorative neon grid background */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image:
+    linear-gradient(var(--neon-soft) 1px, transparent 1px),
+    linear-gradient(90deg, var(--neon-soft) 1px, transparent 1px);
+  background-size: 48px 48px;
+  opacity: 0.08;
+  pointer-events: none;
+  z-index: 0;
+  transition: opacity var(--transition);
+}
+
+/* Radial neon glow */
+body::after {
+  content: "";
+  position: fixed;
+  top: -20%;
+  left: 50%;
+  width: 900px;
+  height: 900px;
+  transform: translateX(-50%);
+  background: radial-gradient(circle, var(--neon-soft) 0%, transparent 60%);
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.5;
+  transition: background var(--transition);
+}
+
+.main {
+  position: relative;
+  z-index: 1;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 4rem 1.5rem 6rem;
+}
+
+.section {
+  padding: 3rem 0;
+  border-bottom: 1px solid var(--neon-soft);
+  display: none;
+  opacity: 0;
+}
+
+.section.is-active {
+  display: block;
+  opacity: 1;
+  animation: sectionFadeIn 0.4s ease;
+}
+
+@keyframes sectionFadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.section:last-child {
+  border-bottom: none;
+}
+
+.section-title {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  color: var(--text);
+  text-shadow: 0 0 12px var(--neon-glow);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+
+.section-subtitle {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: 1.4rem;
+  color: var(--neon);
+  letter-spacing: 1px;
+  margin: 2.5rem 0 1.5rem;
+  text-shadow: 0 0 10px var(--neon-glow);
+}
+
+.section-desc {
+  color: var(--text-dim);
+  max-width: 700px;
+  margin-bottom: 2rem;
+  font-size: 1.05rem;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--neon-soft);
+  border-radius: 10px;
+  border: 2px solid var(--bg);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--neon);
+}

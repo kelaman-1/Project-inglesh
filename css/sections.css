@@ -1,0 +1,314 @@
+/* ===== sections.css — Home, Evidence, Learned grids ===== */
+
+/* ===== HOME ===== */
+.home-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.home-title {
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: clamp(2rem, 5vw, 3.4rem);
+  color: var(--text);
+  text-shadow: 0 0 18px var(--neon-glow), 0 0 30px var(--neon-soft);
+  letter-spacing: 2px;
+  line-height: 1.2;
+  margin-bottom: 1.25rem;
+}
+
+.home-intro {
+  max-width: 760px;
+  margin: 0 auto;
+  color: var(--text-dim);
+  font-size: 1.1rem;
+  line-height: 1.8;
+}
+
+/* Team profiles grid */
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.75rem;
+}
+
+.profile-card {
+  background: var(--bg-card);
+  border: 1px solid var(--neon-soft);
+  border-radius: var(--radius);
+  padding: 1.75rem 1.25rem;
+  text-align: center;
+  cursor: pointer;
+  transition: all var(--transition);
+  position: relative;
+  overflow: hidden;
+}
+
+.profile-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, transparent 60%, var(--neon-soft) 100%);
+  opacity: 0;
+  transition: opacity var(--transition);
+  pointer-events: none;
+}
+
+.profile-card:hover {
+  border-color: var(--neon);
+  box-shadow: 0 0 24px var(--neon-glow);
+  transform: translateY(-6px);
+}
+
+.profile-card:hover::before {
+  opacity: 1;
+}
+
+.profile-photo {
+  width: 120px;
+  height: 120px;
+  margin: 0 auto 1rem;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 2px solid var(--neon);
+  box-shadow: 0 0 18px var(--neon-glow);
+  transition: all var(--transition);
+}
+
+.profile-card:hover .profile-photo {
+  box-shadow: 0 0 28px var(--neon-glow);
+  transform: scale(1.05);
+}
+
+.profile-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.profile-name {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.15rem;
+  color: var(--text);
+  letter-spacing: 1px;
+  margin-bottom: 0.25rem;
+}
+
+.profile-role {
+  font-size: 0.9rem;
+  color: var(--neon);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  text-shadow: 0 0 8px var(--neon-glow);
+}
+
+/* ===== CLASS EVIDENCE ===== */
+.evidence-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+
+.evidence-card {
+  background: var(--bg-card);
+  border: 1px solid var(--neon-soft);
+  border-radius: var(--radius);
+  overflow: hidden;
+  cursor: pointer;
+  transition: all var(--transition);
+}
+
+.evidence-card:hover {
+  border-color: var(--neon);
+  box-shadow: 0 0 24px var(--neon-glow);
+  transform: translateY(-6px);
+}
+
+.evidence-thumb {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+}
+
+.evidence-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.evidence-card:hover .evidence-thumb img {
+  transform: scale(1.08);
+}
+
+.evidence-hover {
+  position: absolute;
+  inset: 0;
+  background: rgba(5, 5, 6, 0.82);
+  display: flex;
+  align-items: center;
+  padding: 1.25rem;
+  opacity: 0;
+  transition: opacity var(--transition);
+}
+
+.evidence-card:hover .evidence-hover {
+  opacity: 1;
+}
+
+.evidence-hover p {
+  color: var(--text);
+  font-size: 0.95rem;
+  line-height: 1.5;
+  border-left: 2px solid var(--neon);
+  padding-left: 0.75rem;
+}
+
+.evidence-meta {
+  padding: 1rem 1.15rem;
+}
+
+.evidence-meta h3 {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: 1rem;
+  color: var(--neon);
+  letter-spacing: 1px;
+  margin-bottom: 0.25rem;
+  text-shadow: 0 0 8px var(--neon-glow);
+}
+
+.evidence-date {
+  font-size: 0.85rem;
+  color: var(--text-dim);
+  letter-spacing: 1px;
+}
+
+/* ===== WHAT WE LEARNED ===== */
+.learned-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.75rem;
+}
+
+.learned-card {
+  background: var(--bg-card);
+  border: 1px solid var(--neon-soft);
+  border-radius: var(--radius);
+  padding: 1.75rem;
+  transition: all var(--transition);
+  position: relative;
+  overflow: hidden;
+}
+
+.learned-card::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: var(--neon);
+  box-shadow: 0 0 14px var(--neon-glow);
+  opacity: 0.5;
+  transition: opacity var(--transition);
+}
+
+.learned-card:hover {
+  border-color: var(--neon);
+  box-shadow: 0 0 24px var(--neon-glow);
+  transform: translateY(-4px);
+}
+
+.learned-card:hover::after {
+  opacity: 1;
+}
+
+.learned-head {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 0.5rem;
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid var(--neon-soft);
+}
+
+.learned-head h3 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.15rem;
+  color: var(--text);
+  letter-spacing: 1px;
+  text-shadow: 0 0 8px var(--neon-glow);
+}
+
+.learned-date {
+  font-size: 0.85rem;
+  color: var(--neon);
+  letter-spacing: 1px;
+}
+
+.learned-body h4 {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: 0.95rem;
+  color: var(--neon);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin: 1rem 0 0.4rem;
+  text-shadow: 0 0 6px var(--neon-glow);
+}
+
+.learned-body h4:first-child {
+  margin-top: 0;
+}
+
+.learned-body ul {
+  list-style: none;
+  margin-bottom: 0.5rem;
+}
+
+.learned-body li {
+  position: relative;
+  padding-left: 1.25rem;
+  color: var(--text-dim);
+  font-size: 0.98rem;
+  line-height: 1.7;
+}
+
+.learned-body li::before {
+  content: "▸";
+  position: absolute;
+  left: 0;
+  color: var(--neon);
+  text-shadow: 0 0 6px var(--neon-glow);
+}
+
+.learned-body p {
+  color: var(--text-dim);
+  font-size: 0.98rem;
+  line-height: 1.7;
+  font-style: italic;
+  border-left: 2px solid var(--neon-soft);
+  padding-left: 0.85rem;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 980px) {
+  .evidence-grid { grid-template-columns: repeat(2, 1fr); }
+  .learned-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 720px) {
+  .team-grid { grid-template-columns: 1fr; max-width: 360px; margin: 0 auto; }
+  .main { padding: 3rem 1rem 5rem; }
+}
+
+@media (max-width: 520px) {
+  .evidence-grid { grid-template-columns: 1fr; }
+  .theme-text { display: none; }
+  .theme-btn { padding: 0.75rem; }
+}

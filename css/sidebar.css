@@ -1,0 +1,190 @@
+/* ===== sidebar.css — Left navigation panel ===== */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 280px;
+  height: 100vh;
+  background: var(--bg-soft);
+  border-right: 2px solid var(--neon);
+  box-shadow: 0 0 30px var(--neon-glow), inset 0 0 20px var(--neon-soft);
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  transform: translateX(-100%);
+  transition: transform var(--transition);
+}
+
+.sidebar.is-open {
+  transform: translateX(0);
+}
+
+.sidebar-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.5rem 1.5rem 1rem;
+  border-bottom: 1px solid var(--neon-soft);
+}
+
+.sidebar-logo {
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: 1.4rem;
+  color: var(--neon);
+  letter-spacing: 4px;
+  text-shadow: 0 0 12px var(--neon-glow);
+}
+
+.sidebar-close {
+  background: transparent;
+  border: 1px solid var(--neon-soft);
+  color: var(--text);
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  font-size: 1.4rem;
+  line-height: 1;
+  cursor: pointer;
+  transition: all var(--transition);
+}
+
+.sidebar-close:hover {
+  background: var(--neon);
+  color: var(--bg);
+  box-shadow: 0 0 12px var(--neon-glow);
+}
+
+.sidebar-nav {
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem 0;
+  flex: 1;
+}
+
+.sidebar-link {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: 1.1rem;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  padding: 1rem 1.75rem;
+  color: var(--text-dim);
+  border-left: 3px solid transparent;
+  transition: all var(--transition);
+  position: relative;
+}
+
+.sidebar-link::after {
+  content: "";
+  position: absolute;
+  right: 1.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--neon);
+  opacity: 0;
+  box-shadow: 0 0 8px var(--neon-glow);
+  transition: opacity var(--transition);
+}
+
+.sidebar-link:hover,
+.sidebar-link.is-active {
+  color: var(--neon);
+  background: var(--neon-soft);
+  border-left-color: var(--neon);
+  text-shadow: 0 0 10px var(--neon-glow);
+}
+
+.sidebar-link:hover::after,
+.sidebar-link.is-active::after {
+  opacity: 1;
+}
+
+.sidebar-footer {
+  padding: 1.25rem 1.5rem;
+  border-top: 1px solid var(--neon-soft);
+}
+
+.sidebar-tag {
+  font-size: 0.8rem;
+  color: var(--text-dim);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+/* Overlay behind sidebar */
+.sidebar-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(2px);
+  opacity: 0;
+  pointer-events: none;
+  z-index: 90;
+  transition: opacity var(--transition);
+}
+
+.sidebar-overlay.is-visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Invisible hover trigger on the left edge */
+.edge-trigger {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 14px;
+  height: 100vh;
+  z-index: 80;
+  cursor: e-resize;
+}
+
+/* Floating Menu button */
+.menu-btn {
+  position: fixed;
+  top: 1.25rem;
+  left: 1.25rem;
+  z-index: 70;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 1rem;
+  background: var(--bg-soft);
+  border: 1px solid var(--neon);
+  border-radius: 10px;
+  color: var(--text);
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: 0.95rem;
+  letter-spacing: 1px;
+  cursor: pointer;
+  box-shadow: 0 0 14px var(--neon-glow);
+  transition: all var(--transition);
+}
+
+.menu-btn:hover {
+  background: var(--neon);
+  color: var(--bg);
+  box-shadow: 0 0 22px var(--neon-glow);
+}
+
+.menu-icon {
+  font-size: 1.1rem;
+  line-height: 1;
+}
+
+/* When sidebar is open, nudge the menu button out of the way */
+.sidebar.is-open ~ .menu-btn {
+  opacity: 0;
+  pointer-events: none;
+  transform: translateX(-20px);
+}
+
+@media (max-width: 600px) {
+  .menu-text { display: none; }
+  .menu-btn { padding: 0.6rem 0.75rem; }
+}

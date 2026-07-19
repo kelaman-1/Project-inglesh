@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Neon Learning Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Rajdhani:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/main.css" />
+  <link rel="stylesheet" href="css/sidebar.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/sections.css" />
+</head>
+<body>
+
+  <!-- Sidebar Navigation -->
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-header">
+      <span class="sidebar-logo">NEON</span>
+      <button class="sidebar-close" id="sidebarClose" aria-label="Close menu">&times;</button>
+    </div>
+    <nav class="sidebar-nav">
+      <a href="#home" class="sidebar-link" data-section="home">Home</a>
+      <a href="#evidence" class="sidebar-link" data-section="evidence">Class Evidence</a>
+      <a href="#learned" class="sidebar-link" data-section="learned">What We Learned</a>
+    </nav>
+    <div class="sidebar-footer">
+      <span class="sidebar-tag">Digital Class Logbook</span>
+    </div>
+  </aside>
+  <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+  <!-- Hover trigger zone on the left edge -->
+  <div class="edge-trigger" id="edgeTrigger" aria-hidden="true"></div>
+
+  <!-- Floating Menu Button -->
+  <button class="menu-btn" id="menuBtn" aria-label="Open menu">
+    <span class="menu-icon">&#9776;</span>
+    <span class="menu-text">Menu</span>
+  </button>
+
+  <!-- Floating Theme Switcher -->
+  <button class="theme-btn" id="themeBtn" aria-label="Change neon color">
+    <span class="theme-icon">&#127912;</span>
+    <span class="theme-text">Change Neon</span>
+  </button>
+
+  <!-- Main Content -->
+  <main class="main">
+
+    <!-- HOME SECTION -->
+    <section id="home" class="section section--home is-active">
+      <header class="home-header">
+        <h1 class="home-title">Welcome to our Learning Journey</h1>
+        <p class="home-intro">
+          This digital logbook gathers the work, evidence, and reflections of our group throughout the term.
+          Here you will find class-by-class records, multimedia evidence of every session, and the key
+          takeaways we built together. It is a living portfolio that grows with each class, designed to
+          showcase not only what we did, but what we learned from doing it.
+        </p>
+      </header>
+
+      <h2 class="section-subtitle">Team Profiles</h2>
+      <div class="team-grid" id="teamGrid">
+        <article class="profile-card" data-member="0">
+          <div class="profile-photo">
+            <img src="https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Alex Carter portrait" />
+          </div>
+          <h3 class="profile-name">Alex Carter</h3>
+          <span class="profile-role">Team Leader</span>
+        </article>
+
+        <article class="profile-card" data-member="1">
+          <div class="profile-photo">
+            <img src="https://images.pexels.com/photos/733872/pexels-photo-733872.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Jordan Lee portrait" />
+          </div>
+          <h3 class="profile-name">Jordan Lee</h3>
+          <span class="profile-role">Research &amp; Content</span>
+        </article>
+
+        <article class="profile-card" data-member="2">
+          <div class="profile-photo">
+            <img src="https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Sam Rivera portrait" />
+          </div>
+          <h3 class="profile-name">Sam Rivera</h3>
+          <span class="profile-role">Design &amp; Media</span>
+        </article>
+      </div>
+    </section>
+
+    <!-- CLASS EVIDENCE SECTION -->
+    <section id="evidence" class="section section--evidence">
+      <h2 class="section-title">Class Evidence</h2>
+      <p class="section-desc">A multimedia gallery of every session. Hover a card to read the summary, click it to open the full evidence.</p>
+
+      <div class="evidence-grid" id="evidenceGrid">
+        <article class="evidence-card" data-evidence="0">
+          <div class="evidence-thumb">
+            <img src="https://images.pexels.com/photos/5212345/pexels-photo-5212345.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Session 1 thumbnail" />
+            <div class="evidence-hover">
+              <p>Introduction to the course, team formation, and the first brainstorming session where we set our goals.</p>
+            </div>
+          </div>
+          <div class="evidence-meta">
+            <h3>Session 1 — Kickoff</h3>
+            <span class="evidence-date">March 04, 2025</span>
+          </div>
+        </article>
+
+        <article class="evidence-card" data-evidence="1">
+          <div class="evidence-thumb">
+            <img src="https://images.pexels.com/photos/5212703/pexels-photo-5212703.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Session 2 thumbnail" />
+            <div class="evidence-hover">
+              <p>Research methodology workshop. We learned how to structure sources and cite academic references.</p>
+            </div>
+          </div>
+          <div class="evidence-meta">
+            <h3>Session 2 — Research Methods</h3>
+            <span class="evidence-date">March 11, 2025</span>
+          </div>
+        </article>
+
+        <article class="evidence-card" data-evidence="2">
+          <div class="evidence-thumb">
+            <img src="https://images.pexels.com/photos/5212695/pexels-photo-5212695.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Session 3 thumbnail" />
+            <div class="evidence-hover">
+              <p>First group presentation. Each team pitched their project proposal and received peer feedback.</p>
+            </div>
+          </div>
+          <div class="evidence-meta">
+            <h3>Session 3 — Pitch Day</h3>
+            <span class="evidence-date">March 18, 2025</span>
+          </div>
+        </article>
+
+        <article class="evidence-card" data-evidence="3">
+          <div class="evidence-thumb">
+            <img src="https://images.pexels.com/photos/5212656/pexels-photo-5212656.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Session 4 thumbnail" />
+            <div class="evidence-hover">
+              <p>Hands-on lab: building the first prototype of our digital portfolio and testing the layout.</p>
+            </div>
+          </div>
+          <div class="evidence-meta">
+            <h3>Session 4 — Prototyping Lab</h3>
+            <span class="evidence-date">March 25, 2025</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- WHAT WE LEARNED SECTION -->
+    <section id="learned" class="section section--learned">
+      <h2 class="section-title">What We Learned</h2>
+      <p class="section-desc">Our group reflections, session by session.</p>
+
+      <div class="learned-grid" id="learnedGrid">
+        <article class="learned-card">
+          <header class="learned-head">
+            <h3>Session 1 — Kickoff</h3>
+            <span class="learned-date">March 04, 2025</span>
+          </header>
+          <div class="learned-body">
+            <h4>Key Vocabulary</h4>
+            <ul><li>Portfolio</li><li>Logbook</li><li>Briefing</li><li>Deliverable</li></ul>
+            <h4>Main Topics</h4>
+            <ul><li>Course objectives and evaluation criteria</li><li>Team roles and responsibilities</li></ul>
+            <h4>Personal Takeaways</h4>
+            <p>We understood that planning and clear roles make group work much smoother from day one.</p>
+          </div>
+        </article>
+
+        <article class="learned-card">
+          <header class="learned-head">
+            <h3>Session 2 — Research Methods</h3>
+            <span class="learned-date">March 11, 2025</span>
+          </header>
+          <div class="learned-body">
+            <h4>Key Vocabulary</h4>
+            <ul><li>Source</li><li>Citation</li><li>Plagiarism</li><li>Reliability</li></ul>
+            <h4>Main Topics</h4>
+            <ul><li>Primary vs. secondary sources</li><li>APA citation format</li></ul>
+            <h4>Personal Takeaways</h4>
+            <p>Good research starts with trustworthy sources; citing correctly protects our work and our team.</p>
+          </div>
+        </article>
+
+        <article class="learned-card">
+          <header class="learned-head">
+            <h3>Session 3 — Pitch Day</h3>
+            <span class="learned-date">March 18, 2025</span>
+          </header>
+          <div class="learned-body">
+            <h4>Key Vocabulary</h4>
+            <ul><li>Pitch</li><li>Value proposition</li><li>Feedback</li><li>Iteration</li></ul>
+            <h4>Main Topics</h4>
+            <ul><li>How to structure a short presentation</li><li>Receiving and applying feedback</li></ul>
+            <h4>Personal Takeaways</h4>
+            <p>Presenting clearly is as important as the idea itself; feedback is a tool, not a criticism.</p>
+          </div>
+        </article>
+
+        <article class="learned-card">
+          <header class="learned-head">
+            <h3>Session 4 — Prototyping Lab</h3>
+            <span class="learned-date">March 25, 2025</span>
+          </header>
+          <div class="learned-body">
+            <h4>Key Vocabulary</h4>
+            <ul><li>Prototype</li><li>Wireframe</li><li>Usability</li><li>Layout</li></ul>
+            <h4>Main Topics</h4>
+            <ul><li>From sketch to first functional layout</li><li>Basic usability testing</li></ul>
+            <h4>Personal Takeaways</h4>
+            <p>Prototyping early reveals problems we would never see on paper; testing with users is essential.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Modal: Profile -->
+  <div class="modal" id="profileModal" aria-hidden="true">
+    <div class="modal-box modal-box--profile">
+      <button class="modal-close" data-close>&times;</button>
+      <div class="modal-profile-photo">
+        <img id="profileModalImg" src="" alt="Member portrait" />
+      </div>
+      <h3 class="modal-title" id="profileModalName"></h3>
+      <span class="modal-role" id="profileModalRole"></span>
+      <p class="modal-bio" id="profileModalBio"></p>
+    </div>
+  </div>
+
+  <!-- Modal: Evidence -->
+  <div class="modal" id="evidenceModal" aria-hidden="true">
+    <div class="modal-box modal-box--evidence">
+      <button class="modal-close" data-close>&times;</button>
+      <h3 class="modal-title" id="evidenceModalTitle"></h3>
+      <span class="modal-date" id="evidenceModalDate"></span>
+
+      <h4 class="modal-subtitle">Photos</h4>
+      <div class="photo-slider" id="photoSlider">
+        <button class="slider-btn slider-btn--prev" id="sliderPrev" aria-label="Previous photo">&lsaquo;</button>
+        <div class="slider-track" id="sliderTrack"></div>
+        <button class="slider-btn slider-btn--next" id="sliderNext" aria-label="Next photo">&rsaquo;</button>
+      </div>
+
+      <h4 class="modal-subtitle">Video Player</h4>
+      <div class="video-frame" id="videoFrame"></div>
+    </div>
+  </div>
+
+  <script src="js/main.js"></script>
+  <script src="js/sidebar.js"></script>
+  <script src="js/modales.js"></script>
+  <script src="js/theme-switcher.js"></script>
+</body>
+</html>
